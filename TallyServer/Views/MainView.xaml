@@ -1,0 +1,41 @@
+﻿<Window x:Class="TallyServer.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TallyServer"
+        xmlns:models="clr-namespace:TallyServer.Models"
+        Title="Tally Server Proxy" Height="266" Width="221"
+        WindowStyle="ToolWindow">
+    
+    <StackPanel>
+        <Border  BorderBrush="{Binding Path=DataModel.StatusColor}" 
+                 Background="{Binding Path=DataModel.StatusColor}" BorderThickness="5" 
+                 HorizontalAlignment="Left" Margin="1,1,0,1" VerticalAlignment="Top" 
+                 CornerRadius="5" Height="34" Width="202" >
+            <Border.Effect>
+                <BlurEffect />
+            </Border.Effect>
+        </Border>
+        <TextBox Text="{Binding Path=DataModel.LogMessages, Mode=OneWay}" 
+                 Background="White" Height="164" Width="203" 
+                 VerticalScrollBarVisibility="Auto"  HorizontalAlignment="Left" 
+                 VerticalAlignment="Top"  BorderThickness="2" BorderBrush="Gray" 
+                 IsReadOnly="True">
+        </TextBox>
+        <StatusBar RenderTransformOrigin="0.5,0.5">
+            <StatusBarItem VerticalAlignment="Center">
+                <Label Content="Port:" />
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBox Text="{Binding Path=DataModel.PortNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         IsReadOnly="{Binding Path=DataModel.IsListening}"
+                    MinWidth="50"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <Button Content="{Binding Path=DataModel.ButtonText}" 
+                        Command="{Binding ButtonCommand}" 
+                        MinWidth="90"
+                        Height="22"/>
+            </StatusBarItem>
+        </StatusBar>
+    </StackPanel>
+</Window>

@@ -1,0 +1,10 @@
+﻿<Application x:Class="TallyServer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:TallyServer.ViewModels"
+             xmlns:views="TallyServer.Views"
+             Startup="Application_Startup" Exit="Application_Exit">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
