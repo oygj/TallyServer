@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:TallyServer"
         xmlns:models="clr-namespace:TallyServer.Models"
         Title="Tally Server Proxy" Height="266" Width="221"
-        WindowStyle="ToolWindow">
+        WindowStyle="ToolWindow" ResizeMode="NoResize">
     
     <StackPanel>
         <Border  BorderBrush="{Binding Path=DataModel.StatusColor}" 
